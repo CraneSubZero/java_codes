@@ -20,6 +20,6 @@ public class methodDemo {
 		else
 			min = a;
 
-		return min; //test1234
+		return min; //test12345
 	}
 }
