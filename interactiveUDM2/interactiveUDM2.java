@@ -13,19 +13,37 @@ public class interactiveUDM2 {
                 // Use strings to store user input
                 String inputA;
                 String inputB;
+                String inputC;
+                String inputD;
+                String inputE;
 
-                // Request two integer inputs from the user as strings
-                System.out.print("Enter a First Word: ");
+                // Request five string inputs from the user
+                System.out.print("Enter a First value: ");
                 inputA = sc.next();
-                System.out.print("Enter a Second Word: ");
+                System.out.print("Enter a Second Value: ");
                 inputB = sc.next();
+                System.out.print("Enter a Third Value: ");
+                inputC = sc.next();
+                System.out.print("Enter a Fourth Value: ");
+                inputD = sc.next();
+                System.out.print("Enter a Fifth Value: ");
+                inputE = sc.next();
 
-                // Convert strings to integers
-                int a = Integer.parseInt(inputA);
-                int b = Integer.parseInt(inputB);
+                // Convert strings to integers using a try-catch block
+                int a, b, c, d, e;
+                try {
+                    // Assuming you still want to parse the inputs as integers
+                    a = Integer.parseInt(inputA);
+                    b = Integer.parseInt(inputB);
+                    c = Integer.parseInt(inputC);
+                    d = Integer.parseInt(inputD);
+                    e = Integer.parseInt(inputE);
+                } catch (NumberFormatException ex) {
+                    throw new IllegalArgumentException("Invalid input. Please enter valid numeric values.");
+                }
 
-                System.out.println("Minimum value is: " + minFunc(a, b));
-                System.out.println("Maximum value is: " + maxFunc(a, b));
+                System.out.println("Minimum value is: " + minFunc(a, b, c, d, e));
+                System.out.println("Maximum value is: " + maxFunc(a, b, c, d, e));
 
                 // Ask the user if they want to go again
                 System.out.print("Do you want to go again? (Y/N): ");
@@ -42,7 +60,7 @@ public class interactiveUDM2 {
                 if (e instanceof IllegalArgumentException) {
                     System.out.println(e.getMessage());
                 } else {
-                    System.out.println("Invalid input. Please Enter Numeric Values");
+                    System.out.println("An unexpected error occurred.");
                 }
             } finally {
                 sc.nextLine(); // Consume the invalid input to avoid an infinite loop
@@ -52,13 +70,13 @@ public class interactiveUDM2 {
         sc.close(); // Close the scanner outside the loop
     }
 
-    public static int minFunc(int a, int b) {
-        // Determines the smaller value (min) between two numeric values
-        return Math.min(a, b);
+    public static int minFunc(int a, int b, int c, int d, int e) {
+        // Determines the smaller value (min) between five numeric values
+        return Math.min(Math.min(Math.min(Math.min(a, b), c), d), e);
     }
 
-    public static int maxFunc(int a, int b) {
-        // Determines the bigger value (max) between two numeric values
-        return Math.max(a, b);
+    public static int maxFunc(int a, int b, int c, int d, int e) {
+        // Determines the bigger value (max) between five numeric values
+        return Math.max(Math.max(Math.max(Math.max(a, b), c), d), e);
     }
 }
