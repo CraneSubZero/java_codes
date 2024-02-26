@@ -32,7 +32,7 @@ public class interactiveUDM2 {
                 // Convert strings to integers using a try-catch block
                 int a, b, c, d, e;
                 try {
-                    // Assuming you still want to parse the inputs as integers
+                    // Assuming that you still wanted to parse the inputs as integers in here.
                     a = Integer.parseInt(inputA);
                     b = Integer.parseInt(inputB);
                     c = Integer.parseInt(inputC);
@@ -63,7 +63,7 @@ public class interactiveUDM2 {
                     System.out.println("An unexpected error occurred.");
                 }
             } finally {
-                sc.nextLine(); // Consume the invalid input to avoid an infinite loop
+                sc.nextLine(); // Close the invalid input to avoid an infinite loop within your statements.
             }
         } while (true); // This is the True Path.
 

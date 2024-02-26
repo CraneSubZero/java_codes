@@ -49,7 +49,7 @@ public class interactiveUDM {
                     System.out.println("Invalid input. Please Enter Numeric Values");
                 }
             } finally {
-                sc.nextLine(); // Consume the invalid input to avoid an infinite loop
+                sc.nextLine(); // Close the invalid input to avoid an infinite loop within your statements.
             }
         } while (true); // This is the True Path.
 
