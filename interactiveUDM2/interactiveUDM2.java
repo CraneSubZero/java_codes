@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.Scanner; // Flagged for Prelim Second Sem
 
 public class interactiveUDM2 {
 
