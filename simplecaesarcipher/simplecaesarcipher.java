@@ -1,4 +1,4 @@
-import java.util.Scanner; // Improved Code from Sir Kurt's Perspective.
+import java.util.Scanner;
 
 public class simplecaesarcipher {
     public static void main(String[] args) {
@@ -18,14 +18,16 @@ public class simplecaesarcipher {
         }
 
         // Get the plain text from the user
-        System.out.print("Enter the plain text: ");
-        String plaintext = scanner.nextLine();
+        System.out.print("Enter the text: ");
+        String inputText = scanner.nextLine();
 
         // Encrypt the plain text using the Caesar Cipher
-        String ciphertext = caesarCipherEncrypt(plaintext, shift);
+        String encryptedText = caesarCipherEncrypt(inputText, shift);
+        System.out.println("Encrypted text: " + encryptedText);
 
-        // Output the ciphertext
-        System.out.println("Cipher text: " + ciphertext);
+        // Decrypt the cipher text using the Caesar Cipher
+        String decryptedText = caesarCipherDecrypt(encryptedText, shift);
+        System.out.println("Decrypted text: " + decryptedText);
 
         scanner.close();
     }
@@ -40,7 +42,7 @@ public class simplecaesarcipher {
             if (Character.isLetter(currentChar)) {
                 char base = Character.isUpperCase(currentChar) ? 'A' : 'a';
                 // Shift the letters (both uppercase and lowercase) by the specified amount
-                char encryptedChar = (char) (((currentChar - base + shift) % 26) + base);
+                char encryptedChar = (char) (((currentChar - base + shift) % 26 + 26) % 26 + base);
                 encryptedText.append(encryptedChar);
             } else {
                 // If the character is not a letter, leave it unchanged
@@ -49,5 +51,11 @@ public class simplecaesarcipher {
         }
 
         return encryptedText.toString();
+    }
+
+    // Method to perform Caesar Cipher decryption
+    private static String caesarCipherDecrypt(String ciphertext, int shift) {
+        // Decryption is just the encryption in reverse, so we use a negative shift
+        return caesarCipherEncrypt(ciphertext, -shift);
     }
 }
