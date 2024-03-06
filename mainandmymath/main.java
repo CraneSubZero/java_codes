@@ -12,9 +12,11 @@ public class main {
 		System.out.print("Enter value for B: ");
 		b = sc.nextInt();
 
-		int result = MyMath.addTwoNumbers(a, b);
+		int sum = MyMath.addTwoNumbers(a, b);
+		int diff = MyMath.subTwoNumbers(a, b);
 
-		System.out.println("The SUM is: " + result);
+		System.out.println("The SUM is: " + sum);
+		System.out.println("The DIFFERENCE is: " + diff);
 
 	}
 	
