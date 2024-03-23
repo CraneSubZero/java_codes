@@ -21,7 +21,7 @@ public class discussion {
             System.out.println("Middle name: " + middleName);
             System.out.println("Last name: " + lastName);
         } catch (StringIndexOutOfBoundsException e) {
-            System.out.println("Error: Invalid input format. Please enter your full name in the correct format.");
+            System.out.println("Error: Invalid input format. Please enter your full name in the correct spaces per index format.");
         }
     }
 }
