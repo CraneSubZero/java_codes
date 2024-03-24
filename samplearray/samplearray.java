@@ -18,7 +18,7 @@ public class samplearray {
                 sum += numbers[i];
             }
 
-            // This is for the average, you will need to put it on a double format since we want to include its decimal point.
+            // This is for the sum and average, you will need to put it on a double format since we want to include its decimal point.
             double average = (double) sum / numbers.length;
 
             // Final Outputs for the Sum and Average.
