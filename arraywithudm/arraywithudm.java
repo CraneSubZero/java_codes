@@ -1,39 +1,39 @@
 public class arraywithudm {
 
   public static void main(String[] args) {
-    double[] myList = {1.2, 9.3, 1.6, 2.5}; // Declare the array; assign values into array
+    double[] myList = {1.2, 9.3, 1.6, 2.5}; // Declare the whole array; assign values into the arrangement.
 
-    // Call the dispArray user-defined method to display the array contents to screen.
+    // You will have to call the dispArray udm to display the array contents to screen.
     dispArray(myList);
 
-    // Summing and averaging all elements
+    // Formula for sum and averaging
     double sum = sumArray(myList);
     double average = sum / myList.length;
     System.out.println();
     System.out.println("Total is " + sum);
     System.out.println("Average is " + average);
 
-    // Finding the largest element
+    // Finding the Largest Element Formula
     double max = findMax(myList);
     System.out.println("Max is " + max);
 
-    // Finding the smallest element
+    // Finding the Smallest Element Formula
     double min = findMin(myList);
     System.out.println("Min is " + min);
   }
 
-  // User-defined method to display the array contents
+  // UDM on the first double.
   public static void dispArray(double[] myList) {
     // Print all the array elements
     System.out.println("These are the elements in the array:");
-    System.out.print("|");
+    System.out.print("|"); // You will have to make these lines as much as possible to distinguish the values.
     for (int i = 0; i < myList.length; i++) {
       System.out.print(myList[i] + "|");
     }
     System.out.println();
   }
 
-  // User-defined method to sum all elements in the array
+  // UDM for the sum.
   public static double sumArray(double[] myList) {
     double sum = 0;
     for (int i = 0; i < myList.length; i++) {
@@ -42,7 +42,7 @@ public class arraywithudm {
     return sum;
   }
 
-  // User-defined method to find the largest element in the array
+  // UDM for the maximum value.
   public static double findMax(double[] myList) {
     double max = myList[0];
     for (int i = 1; i < myList.length; i++) {
@@ -51,7 +51,7 @@ public class arraywithudm {
     return max;
   }
 
-  // User-defined method to find the smallest element in the array
+  // UDM for the minimum value.
   public static double findMin(double[] myList) {
     double min = myList[0];
     for (int i = 1; i < myList.length; i++) {
