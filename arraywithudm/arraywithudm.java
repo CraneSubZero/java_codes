@@ -1,24 +1,24 @@
 public class arraywithudm {
 
   public static void main(String[] args) {
-    double[] myList = {1.2, 9.3, 1.6, 2.5}; // Declare the whole array; assign values into the arrangement.
+    double[] myList = {1.2, 9.3, 1.6, 2.5}; // Declare the whole array; assign values into the arrangement. // First Double.
 
     // You will have to call the dispArray udm to display the array contents to screen.
     dispArray(myList);
 
-    // Formula for sum and averaging
-    double sum = sumArray(myList);
-    double average = sum / myList.length;
+    // This is the Formula for the sum and averaging.
+    double sum = sumArray(myList); // Second Double.
+    double average = sum / myList.length; // Third Double.
     System.out.println();
     System.out.println("Total is " + sum);
     System.out.println("Average is " + average);
 
-    // Finding the Largest Element Formula
-    double max = findMax(myList);
+    // This is the finding of the Largest Element Formula.
+    double max = findMax(myList); // Fourth Double.
     System.out.println("Max is " + max);
 
-    // Finding the Smallest Element Formula
-    double min = findMin(myList);
+    // This is the finding of the Smallest Element Formula.
+    double min = findMin(myList); // Fifth Double
     System.out.println("Min is " + min);
   }
 
@@ -36,7 +36,7 @@ public class arraywithudm {
   // UDM for the sum.
   public static double sumArray(double[] myList) {
     double sum = 0;
-    for (int i = 0; i < myList.length; i++) {
+    for (int i = 0; i < myList.length; i++) { // first for loop.
       sum += myList[i];
     }
     return sum;
@@ -45,7 +45,7 @@ public class arraywithudm {
   // UDM for the maximum value.
   public static double findMax(double[] myList) {
     double max = myList[0];
-    for (int i = 1; i < myList.length; i++) {
+    for (int i = 1; i < myList.length; i++) { // second for loop.
       if (myList[i] > max) max = myList[i];
     }
     return max;
@@ -54,7 +54,7 @@ public class arraywithudm {
   // UDM for the minimum value.
   public static double findMin(double[] myList) {
     double min = myList[0];
-    for (int i = 1; i < myList.length; i++) {
+    for (int i = 1; i < myList.length; i++) { // third for loop.
       if (myList[i] < min) min = myList[i];
     }
     return min;
