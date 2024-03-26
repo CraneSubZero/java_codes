@@ -1,7 +1,7 @@
 public class arraywithudm {
 
   public static void main(String[] args) {
-    double[] myList = {1.2, 9.3, 1.6, 2.5}; // Declare the whole array; assign values into the arrangement. // First Double.
+    double[] myList = {9.54, 3.234, 854.2, 32.1}; // Declare the whole array; assign values into the arrangement. // First Double.
 
     // You will have to call the dispArray udm to display the array contents to screen.
     dispArray(myList);
