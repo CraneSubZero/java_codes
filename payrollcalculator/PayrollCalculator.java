@@ -33,12 +33,12 @@ public class PayrollCalculator {
                 double sumResult = totaldeductionamount(mediacare, advances, incometaxes);
                 double differenceResult = netpay(productResult, sumResult);
 
-                System.out.println("Employee Name: " + name);
+                System.out.println("\nEmployee Name: " + name);
                 System.out.println("Gross Pay: " + productResult);
                 System.out.println("Total Deduction: " + sumResult);
                 System.out.println("Net Pay: " + differenceResult);
 
-                System.out.print("Do you want to go again? (Y/N): ");
+                System.out.print("\nDo you want to go again? (Y/N): ");
                 String goAgain = sc.next();
 
                 if (goAgain.equalsIgnoreCase("N")) {
