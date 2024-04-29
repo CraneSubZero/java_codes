@@ -13,7 +13,7 @@ public class StringSearchArrays {
         }
 
         // You're going to type here the "string" or "value" that you wanted to input
-        System.out.print("Enter a string to search in the array:");
+        System.out.print("\nEnter a string to search in the array:");
         String searchValue = scanner.nextLine();
 
         // This is responsible for searching the array that you have written on line 16
@@ -22,7 +22,7 @@ public class StringSearchArrays {
         // Result of the written input that you put on line 16
         if (valueFound) {
             int index = Arrays.asList(stringArray).indexOf(searchValue);
-            System.out.println("Value found at index: " + index);
+            System.out.println("\nValue found at index: " + index);
         } else {
             System.out.println("Value not found.");
         }
