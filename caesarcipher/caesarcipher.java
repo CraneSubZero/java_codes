@@ -1,37 +1,46 @@
+import java.util.Scanner;
+
 public class caesarcipher {
 
     public static void main(String[] args) {
-        
+        Scanner scanner = new Scanner(System.in); // Initialize the scanner to read user input
 
-        // Example usage of the Message that you're going to deliver.
-        String message = "What do you think of the Avengers Movie?";
-        int shiftKey = 3; // The number of times that you're going to shift back to encrypt a message.
+        // Prompt the user for the message they want to encrypt
+        System.out.print("Enter the message to encrypt: ");
+        String message = scanner.nextLine();
 
-        String encryptedMessage = encrypt(message, shiftKey); // This is a function of encrypting the Message.
-        String decryptedMessage = decrypt(encryptedMessage, shiftKey); // This is a function of decrypting the Message.
+        // Prompt the user for the shift key
+        System.out.print("Enter the shift key (number of positions to shift): ");
+        int shiftKey = scanner.nextInt();
 
-        System.out.println("Original Message: " + message); // The Message that you Encrypted Earlier at Line 7.
-        System.out.println("Encrypted Message: " + encryptedMessage); // This is now an Encrypted Message from Line 7.
-        System.out.println("Decrypted Message: " + decryptedMessage); // This is now a Decrypted Message from Line 7.
+        // Perform encryption and decryption
+        String encryptedMessage = encrypt(message, shiftKey); // Encrypt the message
+        String decryptedMessage = decrypt(encryptedMessage, shiftKey); // Decrypt the message
+
+        // Output the results
+        System.out.println("Original Message: " + message);
+        System.out.println("Encrypted Message: " + encryptedMessage);
+        System.out.println("Decrypted Message: " + decryptedMessage);
+
+        scanner.close(); // Close the scanner to avoid resource leaks
     }
 
-    private static String encrypt(String message, int shiftKey) { // Do the Private User Defined Method (UDM). Also responsible for the Encryption message.
-        StringBuilder result = new StringBuilder(); // This will throw back at Line 7.
+    private static String encrypt(String message, int shiftKey) { 
+        StringBuilder result = new StringBuilder(); 
 
-        for (char character : message.toCharArray()) { // This is a for loop.
-            if (Character.isLetter(character)) { // If Else Statement for the Character.
-                char base = Character.isLowerCase(character) ? 'a' : 'A'; // This will cross out the Case Sensitive on all letters entered.
-                result.append((char) ((character - base + shiftKey) % 26 + base)); // Signifies the 26 Letters on the Alphabet.
+        for (char character : message.toCharArray()) { 
+            if (Character.isLetter(character)) { 
+                char base = Character.isLowerCase(character) ? 'a' : 'A'; 
+                result.append((char) ((character - base + shiftKey) % 26 + base)); 
             } else {
                 result.append(character);
             }
         }
 
-        return result.toString(); // Return back from the String on Line 7.
+        return result.toString(); 
     }
 
-    private static String decrypt(String encryptedMessage, int shiftKey) { // The Second User Defined Method (UDM). Also responsible for the Decryption of the message.
-        // Decryption is the same as encryption with a negative shift
-        return encrypt(encryptedMessage, -shiftKey);
+    private static String decrypt(String encryptedMessage, int shiftKey) { 
+        return encrypt(encryptedMessage, -shiftKey); // Decrypt using the reverse shift
     }
 }
